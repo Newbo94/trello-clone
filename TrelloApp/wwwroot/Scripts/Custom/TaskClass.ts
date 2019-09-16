@@ -1,10 +1,9 @@
-export default class Task {
+﻿export default class Task {
   taskTitle: string;
-  taskID: number;
-  isDone: boolean;
 
   constructor(taskTitle: string, taskID: number) {
     this.taskTitle = taskTitle;
-    this.taskID = taskID;
   }
 }
+
+console.log("working 2");
