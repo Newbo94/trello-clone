@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const glob = require("glob");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 const dev_Path = '../wwwroot/dev'; // Dist folder for files - Change to relevant path
 
@@ -11,24 +12,41 @@ module.exports = {
     style: './wwwroot/Content/Styles/main.scss' // Styles
   },
   resolve: {
-    extensions: [".js", ".css", ".ts", ".scss"]
+    extensions: [".js", ".css", ".ts", ".scss", ".vue"],
+    alias: {
+      vue: "vue/dist/vue.esm.js"
+    }
   },
   output: {
     path: path.resolve(__dirname, dev_Path),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   devtool: 'source-map',
   module: {
     rules: [{
+      test: /\.vue$/,
+      loader: "vue-loader",
+      options: {
+        
+      }
+    },{
       test: /\.m?js$/,
       exclude: /(node_modules|bower_components)/,
       use: {
         loader: 'babel-loader',
       }
     }, {
-      test: /\.ts?$/,
-      use: 'ts-loader',
-      exclude: /node_modules/
+      test: /\.tsx?$/,
+      use: [{
+        loader: 'ts-loader',
+        options: {
+          onlyCompileBundledFiles: true,
+
+          appendTsSuffixTo: [/\.vue$/]
+        }
+      }]
+  
+ 
     }, {
       test: /\.(sass|scss|css)$/,
       use: [{
@@ -61,6 +79,7 @@ module.exports = {
     }]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     })

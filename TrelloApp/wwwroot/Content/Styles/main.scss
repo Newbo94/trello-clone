@@ -1,8 +1,7 @@
-@import "test.scss";
+@import "./Layout/global";
 
-body {
-  background-color: red;
-  color: gray;
+@import "./Helpers/transitions";
+@import "./Helpers/skeleton";
 
-  display: flex;
-}
+@import "./Components/modals";
+@import "./Components/card";

@@ -29,9 +29,17 @@
     "webpack": "^4.40.2",
     "webpack-cli": "^3.0.1",
     "tslint": "^5.13.1",
-    "tslint-loader": "^3.5.3"
+    "tslint-loader": "^3.5.3",
+    "vue-loader": "^15.7.0",
+    "vue-class-component": "7.1.0",
+    "vue-property-decorator": "8.2.1",
+    "vue-template-compiler": "2.6.10",
+    "vue": "2.6.10"
   },
   "dependencies": {
-    "css-reset-and-normalize": "^1.0.1"
+    "@types/node": "^12.7.5",
+    "axios": "^0.19.0",
+    "css-reset-and-normalize": "^1.0.1",
+    "vue-axios": "^2.1.5"
   }
 }

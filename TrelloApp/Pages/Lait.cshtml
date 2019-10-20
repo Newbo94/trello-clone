@@ -1,10 +1,10 @@
-﻿@page
-@model IndexModel
+@page
+@model LaitModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Lait";
 }
 
-<div data-grid-component class="container">
+<div data-lait-component class="container">
     <div class="row">
      <div class="col-12 col-lg-4" v-for="card in listItems" :key="card.index">
         <card :item="card" :loading="loading"></card>
