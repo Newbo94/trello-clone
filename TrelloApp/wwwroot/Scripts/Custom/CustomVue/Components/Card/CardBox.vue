@@ -1,7 +1,7 @@
 <template>
-  <div class="card" v-on:click="Open($event)" :class="{'is-open' : isOpen}" :style="styleObject">
+  <div class="c-card" v-on:click="Open($event)" :class="{'is-open' : isOpen}" :style="styleObject">
     <div v-if="!loading">
-      <div class="card__overlay"></div>
+      <div class="c-card__overlay"></div>
       <div v-if="item.img !== null">
         <img :src="item.img" alt />
       </div>
@@ -11,11 +11,11 @@
         </video>
       </div>
 
-      <div class="card__body">
+      <div class="c-card__body">
         <h1>{{item.title}}</h1>
-        <p class="card__desc">{{item.description}}</p>
+        <p class="c-card__desc">{{item.description}}</p>
       </div>
-      <div class="card__content">
+      <div class="c-card__content">
         <p>{{item.content}}</p>
       </div>
     </div>

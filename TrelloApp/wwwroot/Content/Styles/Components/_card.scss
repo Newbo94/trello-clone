@@ -1,19 +1,19 @@
-.card {
+.c-card {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   width: 100%;
   cursor: pointer;
   position: relative;
   border-radius: 0;
   border: none;
-  border-radius: 6px;
   margin-bottom: 1.5rem;
   height: 340px;
   overflow-y: hidden;
-  transition: transform 0.5s cubic-bezier(0.6, 0, 0.45, 1.3),
-    width 0.5s cubic-bezier(0.6, 0, 0.45, 1.3);
+  transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01),
+    width 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01);
 
   & > div {
     height: 100vh;
+    width: 100vw;
   }
 
   &.is-open {
@@ -23,8 +23,8 @@
     z-index: 999;
     border: 0;
     overflow-y: initial;
-    .card__body {
-      bottom: 340px;
+    .card__content {
+      display: none;
     }
   }
 
@@ -35,7 +35,6 @@
     bottom: 0;
     color: #fff;
     max-width: 100%;
-    max-height: 225px;
   }
 
   &__desc {
@@ -53,25 +52,24 @@
     top: 340px;
     padding: 1rem;
     overflow: auto;
+    display: none;
   }
 
   &__overlay {
     content: "";
     position: absolute;
     width: 100%;
-    height: 340px;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
     z-index: 2;
-    border-radius: 6px;
   }
 
   img,
   video {
-    border-radius: 6px;
     width: 100%;
-    height: 340px;
+    height: 100%;
     object-fit: cover;
     position: absolute;
     left: 0;

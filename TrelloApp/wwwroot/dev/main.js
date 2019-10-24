@@ -13189,12 +13189,16 @@ var CardBoxComponent = /** @class */ (function (_super) {
         var viewportOffset = e.target.getBoundingClientRect();
         if (this.isOpen == true) {
             document.body.style.top = "-" + window.scrollY + "px";
+            document.body.style.left = "0px";
+            document.body.style.right = "0px";
             document.body.style.position = "fixed";
-            this.styleObject.transform = "translate(" + viewportOffset.left * -1 + "px, " + viewportOffset.top * -1 + "px)";
-            console.log(viewportOffset.left);
+            this.styleObject.transform = "translate(" + viewportOffset.left *
+                -1 + "px, " + viewportOffset.top * -1 + "px)";
         }
         else {
             document.body.style.top = "";
+            document.body.style.left = "";
+            document.body.style.right = "";
             document.body.style.position = "";
             this.styleObject = {
                 transform: "translate(0px, 0px)"
@@ -13847,7 +13851,7 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "card",
+      staticClass: "c-card",
       class: { "is-open": _vm.isOpen },
       style: _vm.styleObject,
       on: {
@@ -13859,7 +13863,7 @@ var render = function() {
     [
       !_vm.loading
         ? _c("div", [
-            _c("div", { staticClass: "card__overlay" }),
+            _c("div", { staticClass: "c-card__overlay" }),
             _vm._v(" "),
             _vm.item.img !== null
               ? _c("div", [
@@ -13877,15 +13881,15 @@ var render = function() {
                   )
                 ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card__body" }, [
+            _c("div", { staticClass: "c-card__body" }, [
               _c("h1", [_vm._v(_vm._s(_vm.item.title))]),
               _vm._v(" "),
-              _c("p", { staticClass: "card__desc" }, [
+              _c("p", { staticClass: "c-card__desc" }, [
                 _vm._v(_vm._s(_vm.item.description))
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card__content" }, [
+            _c("div", { staticClass: "c-card__content" }, [
               _c("p", [_vm._v(_vm._s(_vm.item.content))])
             ])
           ])
@@ -13952,12 +13956,16 @@ var CardBoxComponent = /** @class */ (function (_super) {
         var viewportOffset = e.target.getBoundingClientRect();
         if (this.isOpen == true) {
             document.body.style.top = "-" + window.scrollY + "px";
+            document.body.style.left = "0px";
+            document.body.style.right = "0px";
             document.body.style.position = "fixed";
-            this.styleObject.transform = "translate(" + viewportOffset.left * -1 + "px, " + viewportOffset.top * -1 + "px)";
-            console.log(viewportOffset.left);
+            this.styleObject.transform = "translate(" + viewportOffset.left *
+                -1 + "px, " + viewportOffset.top * -1 + "px)";
         }
         else {
             document.body.style.top = "";
+            document.body.style.left = "";
+            document.body.style.right = "";
             document.body.style.position = "";
             this.styleObject = {
                 transform: "translate(0px, 0px)"
@@ -14019,22 +14027,29 @@ var LaitComponents = /** @class */ (function (_super) {
         _this.listItems = [
             {
                 title: "Edesign Interactive",
-                description: "",
+                description: "content slider/ Calender slider",
                 img: null,
                 video: "/Content/img/ededesign.mp4",
                 content: "somelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhas"
             },
             {
-                title: "title somethin something",
-                description: "somelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhas",
-                img: "https://images.pexels.com/photos/1622419/pexels-photo-1622419.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+                title: "Customer steps",
+                description: "Custom steps guide til lait processen",
+                img: "/Content/img/Step-guide.png",
                 video: null,
                 content: "somelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhas"
             },
             {
-                title: "title somethin something",
-                description: "somelkdsjfldjks fl flksdj flksf sdlf cacadsa dadaasdjajsdhjkasASD GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhas",
-                img: "https://images.pexels.com/photos/924675/pexels-photo-924675.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+                title: "Teams page inspiration",
+                description: "Teams page inspiration ",
+                img: "/Content/img/Teamspage.png",
+                video: null,
+                content: "somelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhas"
+            },
+            {
+                title: "Play button styles",
+                description: "Play knap inspiration",
+                img: "/Content/img/Video-button.png",
                 video: null,
                 content: "somelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhassomelkdsjfldjks fl flksdj flksf sdlfsomelkdsjfldjks fl flksdj flksf sdlf GDSFJKSD FSADGFKHSDJHFSJHGFSDJGFSJD Sjhajdagsdasgjhdas dahjd ajd ajhdgjasashdjhas"
             }

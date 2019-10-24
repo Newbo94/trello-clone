@@ -31,7 +31,7 @@ body {
   --card-padding: 24px;
   --card-height: 380px;
   --card-skeleton: linear-gradient(lightgrey var(--card-height), transparent 0);
-  --avatar-size: 32px;
+  --avatar-size: 0;
   --avatar-position: var(--card-padding) var(--card-padding);
   --avatar-skeleton: radial-gradient(
     circle 16px at center,
@@ -57,14 +57,13 @@ body {
   --blur-width: 200px;
   --blur-size: var(--blur-width) calc(var(--card-height) - var(--footer-height)); }
 
-.card {
+.c-card {
   height: var(--card-height); }
-  .card:empty::after {
+  .c-card:empty::after {
     content: "";
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 6px;
     -webkit-box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
             box-shadow: 0 10px 45px rgba(0, 0, 0, 0.1);
     background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(211, 211, 211, 0)), color-stop(50%, rgba(211, 211, 211, 0.8)), to(rgba(211, 211, 211, 0))), var(--title-skeleton), var(--desc-line-skeleton), var(--desc-line-skeleton), var(--avatar-skeleton), var(--footer-skeleton), var(--card-skeleton);
@@ -118,7 +117,7 @@ body {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3); }
 
-.card {
+.c-card {
   -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   width: 100%;
@@ -126,61 +125,59 @@ body {
   position: relative;
   border-radius: 0;
   border: none;
-  border-radius: 6px;
   margin-bottom: 1.5rem;
   height: 340px;
   overflow-y: hidden;
-  -webkit-transition: width 0.5s cubic-bezier(0.6, 0, 0.45, 1.3), -webkit-transform 0.5s cubic-bezier(0.6, 0, 0.45, 1.3);
-  transition: width 0.5s cubic-bezier(0.6, 0, 0.45, 1.3), -webkit-transform 0.5s cubic-bezier(0.6, 0, 0.45, 1.3);
-  transition: transform 0.5s cubic-bezier(0.6, 0, 0.45, 1.3), width 0.5s cubic-bezier(0.6, 0, 0.45, 1.3);
-  transition: transform 0.5s cubic-bezier(0.6, 0, 0.45, 1.3), width 0.5s cubic-bezier(0.6, 0, 0.45, 1.3), -webkit-transform 0.5s cubic-bezier(0.6, 0, 0.45, 1.3); }
-  .card > div {
-    height: 100vh; }
-  .card.is-open {
+  -webkit-transition: width 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01), -webkit-transform 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01);
+  transition: width 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01), -webkit-transform 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01);
+  transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01), width 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01);
+  transition: transform 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01), width 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01), -webkit-transform 0.4s cubic-bezier(0.17, 0.67, 0.67, 1.01); }
+  .c-card > div {
+    height: 100vh;
+    width: 100vw; }
+  .c-card.is-open {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
     z-index: 999;
     border: 0;
     overflow-y: initial; }
-    .card.is-open .card__body {
-      bottom: 340px; }
-  .card__body {
+    .c-card.is-open .card__content {
+      display: none; }
+  .c-card__body {
     z-index: 2;
     position: absolute;
     padding: 1rem;
     bottom: 0;
     color: #fff;
-    max-width: 100%;
-    max-height: 225px; }
-  .card__desc {
+    max-width: 100%; }
+  .c-card__desc {
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
-  .card__content {
+  .c-card__content {
     background-color: #fff;
     color: darkslategray;
     position: relative;
     height: 100%;
     top: 340px;
     padding: 1rem;
-    overflow: auto; }
-  .card__overlay {
+    overflow: auto;
+    display: none; }
+  .c-card__overlay {
     content: "";
     position: absolute;
     width: 100%;
-    height: 340px;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
     left: 0;
-    z-index: 2;
-    border-radius: 6px; }
-  .card img,
-  .card video {
-    border-radius: 6px;
+    z-index: 2; }
+  .c-card img,
+  .c-card video {
     width: 100%;
-    height: 340px;
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
     position: absolute;

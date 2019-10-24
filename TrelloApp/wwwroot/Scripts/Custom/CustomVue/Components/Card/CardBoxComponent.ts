@@ -16,11 +16,15 @@ export default class CardBoxComponent extends Vue {
 
     if (this.isOpen == true) {
       document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.left = `0px`;
+      document.body.style.right = `0px`;
       document.body.style.position = "fixed";
-      this.styleObject.transform = `translate(${viewportOffset.left * -1}px, ${viewportOffset.top * -1}px)`;
-      console.log(viewportOffset.left);
+      this.styleObject.transform = `translate(${viewportOffset.left *
+        -1}px, ${viewportOffset.top * -1}px)`;
     } else {
       document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.position = "";
       this.styleObject = {
         transform: "translate(0px, 0px)"
