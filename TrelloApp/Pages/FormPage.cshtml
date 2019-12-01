@@ -1,0 +1,40 @@
+@page
+@model FormPageModel
+@{
+	ViewData["Title"] = "FormPage";
+}
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<div data-form-component>
+				<button	v-on:click="activePage()">Toggle ActivePage1</button>
+				<div v-if="activePage1">
+				<focustrap :is-active="activePage1" :update-trap="updateTrap">
+					<div class="form">
+						<input type="text">
+						<input type="text">
+						<input type="text">
+						<input type="text">
+					</div>
+					<div v-if="loadedData">
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+					</div>
+				</focustrap>
+				</div>
+				<div v-if="activePage2">
+				<focustrap :is-active="activePage2" :update-trap="updateTrap">
+					<div class="form">
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+						div
+					</div>
+				</focustrap>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

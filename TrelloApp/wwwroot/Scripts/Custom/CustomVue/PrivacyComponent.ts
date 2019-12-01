@@ -4,33 +4,33 @@ import { Component } from "vue-property-decorator";
 import ModalBox from "./Components/Modal/ModalBox.vue";
 
 @Component({
-  components: {
-    modalbox: ModalBox
-  }
+	components: {
+		modalbox: ModalBox,
+	},
 })
 export default class PrivacyComponents extends Vue {
-  public isActive: boolean = false;
-  public message: Object = "";
+	public isActive: boolean = false;
+	public message: Object = "";
 
-  mounted() {}
+	mounted() {}
 
-  public modalClose() {
-    this.isActive = false;
-  } 
+	public modalClose() {
+		this.isActive = false;
+	}
 
-  public activeModal() {
-    if (this.isActive) {
-      this.isActive = false;
-    } else {
-      this.isActive = true;
-    }
-  }
+	public activeModal() {
+		if (this.isActive) {
+			this.isActive = false;
+		} else {
+			this.isActive = true;
+		}
+	}
 }
 
 const el = document.querySelector("[data-privacy-component]");
 
 if (el !== null) {
-  new PrivacyComponents({
-    el: el
-  });
+	new PrivacyComponents({
+		el: el,
+	});
 }

@@ -1,59 +1,65 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - StarterApp</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>@ViewData["Title"] - StarterApp</title>
 
-        <environment include="Development">
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        </environment>
-        <link rel="stylesheet" href="~/css/site.css" />
-            <link rel="stylesheet" href="~/dist/style.css" />
-        <link rel="stylesheet" href="~/dev/style.css" />
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand text-light" asp-area="" asp-page="/Index">StarterApp</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-light"" asp-area="" asp-page="/Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-page="/lait">Lait 2020</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-       
-            <partial name="_CookieConsentPartial" />
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-     
+		<environment include="Development">
+			<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+		</environment>
+		<link rel="stylesheet" href="~/css/site.css" />
+			<link rel="stylesheet" href="~/dist/style.css" />
+		<link rel="stylesheet" href="~/dev/style.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+				<div class="container">
+					<a class="navbar-brand text-light" asp-area="" asp-page="/Index">StarterApp</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+						<ul class="navbar-nav flex-grow-1">
+							<li class="nav-item">
+								<a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
+							</li>
+							  <li class="nav-item">
+								<a class="nav-link text-light" asp-area="" asp-page="/trelloApp">TrelloApp</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-light" asp-area="" asp-page="/lait">Lait 2020</a>
+							</li>
+								<li class="nav-item">
+								<a class="nav-link text-light" asp-area="" asp-page="/FormPage">Form page (Focus Trap)</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+	   
+			<partial name="_CookieConsentPartial" />
+			<main role="main" class="pb-3">
+				@RenderBody()
+			</main>
+	 
 
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2019 - StarterApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
-            </div>
-        </footer>
+		<footer class="border-top footer text-muted">
+			<div class="container">
+				&copy; 2019 - StarterApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+			</div>
+		</footer>
 
-    <div  data-overlay-component></div>
-
-
-        <script src="~/dev/main.js"></script>
-        <script src="~/dist/vendor.js"></script>
+	<div  data-overlay-component></div>
 
 
-        @RenderSection("Scripts", required: false)
-    </body>
+		<script src="~/dev/main.js"></script>
+		<script src="~/dist/vendor.js"></script>
+
+
+		@RenderSection("Scripts", required: false)
+	</body>
 </html>
